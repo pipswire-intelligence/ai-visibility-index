@@ -1,0 +1,198 @@
+{
+  "name": "ai-visibility-index-trading-brands",
+  "title": "AI Visibility Index for Trading Brands",
+  "description": "A quarterly measurement of what AI assistants tell traders about forex and CFD brokers, prop trading firms and crypto exchanges. Scores from 0 to 100 for every brand the answers name, by market and by source.",
+  "version": "2026-Q3",
+  "homepage": "https://pipswire.com/intelligence/dataset/",
+  "id": "https://doi.org/10.5281/zenodo.23210742",
+  "created": "2026-09-16T00:00:00Z",
+  "keywords": [
+    "AI visibility",
+    "answer engine optimization",
+    "generative engine optimization",
+    "AI search",
+    "large language models",
+    "brand visibility",
+    "forex brokers",
+    "prop trading firms",
+    "crypto exchanges"
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "PipsWire Intelligence",
+      "role": "publisher",
+      "organization": "Catalinq LLC",
+      "path": "https://pipswire.com/intelligence/",
+      "email": "info@pipswire.com"
+    },
+    {
+      "title": "David Ispiryan",
+      "role": "author",
+      "organization": "PipsWire Intelligence, Catalinq LLC"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Method version 1.1",
+      "path": "https://pipswire.com/intelligence/methodology/"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ai-visibility-index-2026-q3",
+      "title": "AI Visibility Index, edition 2026-Q3",
+      "path": "data/2026-Q3/ai-visibility-index-2026-Q3.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 3465032,
+      "hash": "sha256:e8dfe15188f7a4f47f25910690d119651ed9e4b1a4cd4bd6e5a7980eb584cbd5",
+      "dialect": {
+        "delimiter": ",",
+        "header": true
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "period",
+            "type": "string",
+            "description": "The edition, for example 2026-Q3."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "forex (forex and CFD brokers), prop (prop trading firms) or crypto (crypto exchanges).",
+            "constraints": {
+              "enum": [
+                "forex",
+                "prop",
+                "crypto"
+              ]
+            }
+          },
+          {
+            "name": "geo",
+            "type": "string",
+            "description": "Market: two-letter country code, a region (EUROPE, LATAM) or all."
+          },
+          {
+            "name": "engine",
+            "type": "string",
+            "description": "Source: openai, anthropic, gemini, perplexity, google_ai_mode, google_ai_overview, google_organic, or all."
+          },
+          {
+            "name": "brand",
+            "type": "string",
+            "description": "Brand name after alias matching."
+          },
+          {
+            "name": "brand_slug",
+            "type": "string",
+            "description": "Stable brand ID, matches https://pipswire.com/intelligence/brands/{slug}/."
+          },
+          {
+            "name": "visibility",
+            "type": "number",
+            "description": "AI Visibility Score, 0 to 100: 100 x (0.40 mention_rate + 0.30 rec_rate x position_score + 0.15 sentiment_score + 0.15 own_cite_rate).",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "mention_rate",
+            "type": "number",
+            "description": "Share of answers to questions that name no brand which name this brand, 0 to 1.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          {
+            "name": "rec_rate",
+            "type": "number",
+            "description": "Share of those answers that recommend the brand, 0 to 1.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          {
+            "name": "position_score",
+            "type": "number",
+            "description": "How high the brand sits when recommended, 0 to 1. First in a list is 1; a recommendation in plain text counts 0.6.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          {
+            "name": "sentiment_score",
+            "type": "number",
+            "description": "Average tone over every answer that names the brand: positive 1.0, neutral 0.6, caution 0.3, negative 0.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          {
+            "name": "own_cite_rate",
+            "type": "number",
+            "description": "Share of answers naming the brand that cite the brand's own website, 0 to 1.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          {
+            "name": "share_of_voice",
+            "type": "number",
+            "description": "Brand mentions divided by all brand mentions in the same category, market and source.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          {
+            "name": "n",
+            "type": "integer",
+            "description": "Answers in this cut to questions that name no brand."
+          },
+          {
+            "name": "n_mentions",
+            "type": "integer",
+            "description": "How many of those answers name the brand."
+          },
+          {
+            "name": "ci_low",
+            "type": "number",
+            "description": "Low end of the score's range (95% Wilson interval on the mention rate), 0 to 100.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "ci_high",
+            "type": "number",
+            "description": "High end of the score's range, 0 to 100.",
+            "constraints": {
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

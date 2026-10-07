@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "AI Visibility Index for Trading Brands"
+abstract: >-
+  A quarterly measurement of what AI assistants tell traders about forex and
+  CFD brokers, prop trading firms and crypto exchanges. ChatGPT, Claude,
+  Gemini, Perplexity and Google are asked fixed questions in many markets, and
+  every brand they name gets an AI Visibility Score from 0 to 100, by market
+  and by source.
+authors:
+  - name: "PipsWire Intelligence"
+    address: "Catalinq LLC"
+    city: "San Francisco"
+    region: "California"
+    country: US
+    website: "https://pipswire.com/intelligence/"
+    email: "info@pipswire.com"
+  - family-names: "Ispiryan"
+    given-names: "David"
+    affiliation: "PipsWire Intelligence, Catalinq LLC"
+    orcid: "https://orcid.org/0009-0006-6727-6302"
+version: "2026-Q3"
+date-released: "2026-09-16"
+license: CC-BY-4.0
+url: "https://pipswire.com/intelligence/dataset/"
+repository: "https://github.com/pipswire-intelligence/ai-visibility-index"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23210742"
+    description: "All editions (concept DOI)"
+  - type: doi
+    value: "10.5281/zenodo.23210743"
+    description: "Edition 2026-Q3"
+keywords:
+  - AI visibility
+  - answer engine optimization
+  - generative engine optimization
+  - AI search
+  - large language models
+  - brand visibility
+  - share of voice
+  - forex brokers
+  - prop trading firms
+  - crypto exchanges
